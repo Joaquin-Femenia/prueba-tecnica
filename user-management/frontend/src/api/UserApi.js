@@ -1,7 +1,7 @@
-const API_BASE_URL = '/api/user';
+const API_BASE_URL = 'http://127.0.0.1:3000/user';
 
 export const getUsers = async () => {
-    const response = await fetch('/api/user', {
+    const response = await fetch(API_BASE_URL, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ export const getUsers = async () => {
 }
 
 export const createUser = async (userData) => {
-    const response = await fetch('/api/user', {
+    const response = await fetch(API_BASE_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const createUser = async (userData) => {
 }
 
 export const deleteUser = async (userId) => {
-    const response = await fetch(`/api/user/${userId}`, {
+    const response = await fetch(API_BASE_URL + '/' + userId, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -37,5 +37,5 @@ export const deleteUser = async (userId) => {
     if (!response.ok) {
         throw new Error('Error deleting user');
     }
-    return response.json();
+    return;
 }
