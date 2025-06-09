@@ -1,3 +1,5 @@
+const API_BASE_URL = '/api/user';
+
 export const getUsers = async () => {
     const response = await fetch('/api/user', {
         method: 'GET',
