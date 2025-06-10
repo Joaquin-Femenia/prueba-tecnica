@@ -19,13 +19,13 @@ export class UserController {
     }
 
     @Post()
-    create(@Body() createUsuarioDto: CreateUserDto){
-        return this.userService.create(createUsuarioDto);
+    create(@Body() createUserDto: CreateUserDto){
+        return this.userService.create(createUserDto);
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUserDto) {
-        return this.userService.update(+id, updateUsuarioDto);
+    update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+        return this.userService.update(+id, updateUserDto);
     }
 
     @Delete(':id')
